@@ -1,0 +1,33 @@
+﻿@model IEnumerable<RetailManagementSystem.Models.Report>
+
+@{
+    ViewData["Title"] = "Reports";
+}
+
+<h2>Reports</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Total</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var report in Model)
+        {
+            <tr>
+                <td>@report.Id</td>
+                <td>@report.Title</td>
+                <td>@report.Date.ToShortDateString()</td>
+                <td>@report.TotalAmount.ToString("C")</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@report.Id">View</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

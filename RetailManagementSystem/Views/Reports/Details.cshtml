@@ -1,0 +1,15 @@
+﻿@model RetailManagementSystem.Models.Report
+
+@{
+    ViewData["Title"] = "Report Details";
+}
+
+<h2>@Model.Title</h2>
+
+<p><strong>Date:</strong> @Model.Date.ToShortDateString()</p>
+<p><strong>Total Amount:</strong> @Model.TotalAmount.ToString("C")</p>
+
+@if (Model.Description != null)
+{
+    <p><strong>Description:</strong> @Model.Description</p>
+}

@@ -1,0 +1,12 @@
+﻿@model RetailManagementSystem.Models.Order
+
+
+<h2>Order Details</h2>
+
+<div>
+    <p><strong>Customer Name:</strong> @Model.CustomerName</p>
+    <p><strong>Order Date:</strong> @Model.OrderDate.ToShortDateString()</p>
+    <p><strong>Total Amount:</strong> $@Model.TotalAmount</p>
+</div>
+
+<a class="btn btn-secondary" href="@Url.Action("Create")">Create New Order</a>
